@@ -1,0 +1,22 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# 環境ファイル
+.env
+*.env
+
+# バーチャル環境
+venv/
+myenv/
+
+# Django関連
+db.sqlite3
+staticfiles/
+media/
+
+# エディタやOSの一時ファイル
+*.log
+.DS_Store

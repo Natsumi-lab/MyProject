@@ -3,9 +3,9 @@
 {% block title %}Welcome page{% endblock %}
 
 {% block content %}
-<div class="centered-content"></div>
-<h1>Hello, {{ name }}さん!</h1>
-<br><br>
-<a href="{% url 'person_create' %}" class="btn-primary">さあ、新しい情報を登録しましょう！</a>
+<div class="centered-content">
+    <h1>Hello, {{ name }}さん!</h1>
+    <br><br>
+    <a href="{% url 'person_create' %}" class="btn-primary">さあ、新しい情報を登録しましょう！</a>
 </div>
 {% endblock %}

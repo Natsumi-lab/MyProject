@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}わたしの情報管理{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>わたしの情報管理</h1>
+            <nav>
+                <a href="{% url 'submit' %}">トップ</a> |
+                <a href="{% url 'person_list' %}">一覧</a> |
+                <a href="{% url 'person_create' %}">登録</a>
+            </nav>
+            <hr>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}
+            <!-- 各ページの内容 -->
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <hr>
+            <p style="text-align:center; font-size:0.9rem; color:#555;">© 2025 なつみち</p>
+        </div>
+    </footer>
+</body>
+
+</html>

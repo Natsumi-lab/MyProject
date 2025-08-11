@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>送信結果</title>
-</head>
+{% block title %}Welcome page{% endblock %}
 
-<body>
-    <h1>Hello, {{ name }}!</h1>
-    <a href="{% url 'person_create' %}">早速、登録してみよう！</a>
-</body>
-
-</html>
+{% block content %}
+<div class="centered-content"></div>
+<h1>Hello, {{ name }}さん!</h1>
+<br><br>
+<a href="{% url 'person_create' %}" class="btn-primary">さあ、新しい情報を登録しましょう！</a>
+</div>
+{% endblock %}

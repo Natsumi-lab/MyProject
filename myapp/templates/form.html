@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="jp">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
-</head>
+{% block title %}登録情報一覧{% endblock %}
 
-<body>
-    <form method="POST" action="/submit/">
-        {% csrf_token %}
-        <label for="name">名前を入力してください</label><br><br>
-        <input type="text" id="name" name="name">
-        <input type="submit" value="送信">
-    </form>
-</body>
-
-</html>
+{% block content %}
+<form method="POST" action="/submit/">
+    {% csrf_token %}
+    <label for="name">名前を入力してください</label><br><br>
+    <input type="text" id="name" name="name">
+    <input type="submit" value="送信">
+</form>
+{% endblock %}

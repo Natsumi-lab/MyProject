@@ -1,0 +1,198 @@
+/* --- ベーシックリセット --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Noto Sans JP", system-ui, -apple-system, "Helvetica Neue", Arial;
+    background: #f6f8fa;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* --- コンテナ --- */
+.container {
+    max-width: 880px;
+    margin: 36px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    border: 1px solid rgba(16, 24, 40, 0.04);
+}
+
+h1,
+h2,
+h3 {
+    color: #111827;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+/* --- リスト --- */
+ul {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding-left: 0;
+}
+
+li {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #fbfdff;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    word-break: break-word;
+}
+
+/* データが無いときの表示 */
+li:empty {
+    opacity: 0.8;
+}
+
+/* --- フォーム --- */
+form {
+    margin-top: 12px;
+    display: block;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: #fff;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    transition: box-shadow .12s ease, border-color .12s ease;
+    outline: none;
+}
+
+/* フォーカス時 */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: rgba(59, 130, 246, 0.9);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.08);
+}
+
+textarea {
+    min-height: 4.4em;
+    resize: vertical;
+}
+
+/* --- ボタン --- */
+button,
+input[type="submit"] {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(180deg, #2563eb, #1e40af);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .12s ease, opacity .12s ease;
+    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.12);
+}
+
+button:hover,
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+}
+
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+    opacity: 0.95;
+}
+
+/* 削除ボタン用（フォーム内の小さなボタン）*/
+form button[type="submit"] {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* --- リンク --- */
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- 小さいヘルパー --- */
+.small {
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 640px) {
+    .container {
+        margin: 18px;
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ボタン風リンク */
+a.btn-primary {
+    display: inline-block;
+    background: linear-gradient(180deg, #2563eb, #1e40af);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(30, 64, 175, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.btn-primary:hover {
+    background: linear-gradient(180deg, #1e40af, #1a3aab);
+    box-shadow: 0 8px 18px rgba(30, 64, 175, 0.25);
+    text-decoration: none;
+}
+
+.centered-content {
+    text-align: center;
+    margin-top: 40px;
+}

@@ -1,0 +1,154 @@
+/* 基本リセット */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* テキスト中央寄せ */
+.centered-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+/* コンテナ幅制限と中央寄せ */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+/* 見出し */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* フォームラベル */
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* 入力欄全般 */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #111827;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease-in-out;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* ボタン */
+button,
+input[type="submit"],
+a.btn-primary {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.6rem 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+button:hover,
+input[type="submit"]:hover,
+a.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* リスト */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* フォーム中央寄せ */
+form {
+    max-width: 320px;
+    margin: 0 auto 2rem auto;
+}
+
+/* レスポンシブ（簡易版） */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
+
+.person-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.person-info {
+    max-width: 80%;
+    overflow-wrap: break-word;
+    /* 長いコメントを折り返す */
+}
+
+.person-item form {
+    margin: 0;
+}

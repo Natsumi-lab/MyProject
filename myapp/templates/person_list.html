@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="ja">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登録された情報</title>
-</head>
+{% block title %}登録情報一覧{% endblock %}
 
-<body>
-    <h2>登録された情報</h2>
-    <ul>
-        {% for person in people %}
-        <li>
+{% block content %}
+<h2>登録された情報</h2>
+<ul>
+    {% for person in people %}
+    <li class="person-item">
+        <div class="person-info">
             {{ person.name }} ({{ person.age }}) - {{ person.comment }}
-            <form method="POST" action="{% url 'person_delete' person.id %}" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit">削除</button>
-            </form>
-        </li>
-        {% empty %}
-        <li>データがありません。</li>
-        {% endfor %}
-    </ul>
-    <p><a href="{% url 'person_create' %}">新規登録</a></p>
-    <a href="{% url 'submit' %}">Topページ</a>
-</body>
-
-</html>
+        </div>
+        <form method="POST" action="{% url 'person_delete' person.id %}">
+            {% csrf_token %}
+            <button type="submit">削除</button>
+        </form>
+    </li>
+    {% empty %}
+    <li>データがありません。</li>
+    {% endfor %}
+</ul>
+{% endblock %}

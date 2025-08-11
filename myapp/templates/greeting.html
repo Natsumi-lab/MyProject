@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="jp">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>名前リスト</title>
-</head>
+{% block title %}トップページ{% endblock %}
 
-<body>
-    <h1>名前リスト</h1>
-    <ul>
-        {% for name in names %}
-        <li>Hello, {{ name }}!</li>
-        {% endfor %}
-    </ul>
+{% block content %}
+<h1>名前リスト</h1>
+<ul>
+    {% for name in names %}
+    <li>Hello, {{ name }}さん!</li>
+    {% endfor %}
+</ul>
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="name" placeholder="名前を入力してください" required>
-        <button type="submit">登録</button>
-    </form>
-    <br>
-    <br>
-    <a href="{% url 'person_create' %}"> 早速、登録してみよう！</a>
-</body>
-
-</html>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="名前を入力してください" required>
+    <button type="submit">登録</button>
+</form>
+<br>
+<br>
+<a href="{% url 'person_create' %}" class="btn-primary">さあ、新しい情報を登録しましょう！</a>
+{% endblock %}
